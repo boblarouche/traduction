@@ -1,0 +1,54 @@
+{
+    "name": "boblarouche/traduction",
+    "description": "Traduction",
+    "keywords": [
+        "boblarouche",
+        "traduction"
+    ],
+    "homepage": "https://github.com/boblarouche/traduction",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Bob Larouche",
+            "email": "traduction@boblarouche.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Boblarouche\\Traduction\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Boblarouche\\Traduction\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Boblarouche\\Traduction\\TraductionServiceProvider"
+            ],
+            "aliases": {
+                "Traduction": "Boblarouche\\Traduction\\TraductionFacade"
+            }
+        }
+    }
+}
