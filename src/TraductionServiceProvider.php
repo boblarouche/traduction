@@ -2,6 +2,7 @@
 
 namespace Boblarouche\Traduction;
 
+use Boblarouche\Traduction\Commands\TraductionMissing;
 use Illuminate\Support\ServiceProvider;
 
 class TraductionServiceProvider extends ServiceProvider
@@ -40,7 +41,9 @@ class TraductionServiceProvider extends ServiceProvider
             ], 'lang');*/
 
             // Registering package commands.
-            // $this->commands([]);
+            $this->commands([
+                TraductionMissing::class
+            ]);
         }
     }
 
